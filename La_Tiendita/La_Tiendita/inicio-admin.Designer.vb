@@ -23,7 +23,6 @@ Partial Class inicio_admin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministradorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistrarUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -40,18 +39,12 @@ Partial Class inicio_admin
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem, Me.AdministradorToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AdministradorToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(270, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
-        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'AdministradorToolStripMenuItem
         '
@@ -176,7 +169,6 @@ Partial Class inicio_admin
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministradorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarUsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button7 As Button

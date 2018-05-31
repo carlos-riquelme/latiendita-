@@ -29,8 +29,8 @@ Partial Class Usuarios
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.VolverAPantallaPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -112,7 +112,13 @@ Partial Class Usuarios
         Me.VolverToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverAPantallaPrincipalToolStripMenuItem})
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
         Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.VolverToolStripMenuItem.Text = "Arcihvo"
+        Me.VolverToolStripMenuItem.Text = "Archivo"
+        '
+        'VolverAPantallaPrincipalToolStripMenuItem
+        '
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Name = "VolverAPantallaPrincipalToolStripMenuItem"
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Text = "Volver a Pantalla Principal"
         '
         'DataGridView1
         '
@@ -121,12 +127,6 @@ Partial Class Usuarios
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(350, 411)
         Me.DataGridView1.TabIndex = 0
-        '
-        'VolverAPantallaPrincipalToolStripMenuItem
-        '
-        Me.VolverAPantallaPrincipalToolStripMenuItem.Name = "VolverAPantallaPrincipalToolStripMenuItem"
-        Me.VolverAPantallaPrincipalToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
-        Me.VolverAPantallaPrincipalToolStripMenuItem.Text = "Volver a Pantalla Principal"
         '
         'Usuarios
         '
