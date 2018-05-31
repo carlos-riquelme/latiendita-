@@ -30,6 +30,7 @@ Partial Class Productos
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.VolverAPantallaPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -49,9 +50,10 @@ Partial Class Productos
         '
         'VolverToolStripMenuItem
         '
+        Me.VolverToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverAPantallaPrincipalToolStripMenuItem})
         Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
-        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.VolverToolStripMenuItem.Text = "Volver"
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.VolverToolStripMenuItem.Text = "Archivo"
         '
         'SplitContainer1
         '
@@ -123,6 +125,12 @@ Partial Class Productos
         Me.DataGridView1.Size = New System.Drawing.Size(776, 287)
         Me.DataGridView1.TabIndex = 0
         '
+        'VolverAPantallaPrincipalToolStripMenuItem
+        '
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Name = "VolverAPantallaPrincipalToolStripMenuItem"
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.VolverAPantallaPrincipalToolStripMenuItem.Text = "Volver a Pantalla Principal"
+        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -153,4 +161,5 @@ Partial Class Productos
     Friend WithEvents btn_editar As Button
     Friend WithEvents btn_agregar As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents VolverAPantallaPrincipalToolStripMenuItem As ToolStripMenuItem
 End Class

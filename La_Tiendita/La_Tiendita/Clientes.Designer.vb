@@ -25,11 +25,12 @@ Partial Class Clientes
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_imprimir = New System.Windows.Forms.Button()
         Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.btn_imprimir = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -49,9 +50,10 @@ Partial Class Clientes
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem})
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.SalirToolStripMenuItem.Text = "Archivo"
         '
         'SplitContainer1
         '
@@ -74,33 +76,16 @@ Partial Class Clientes
         Me.SplitContainer1.SplitterDistance = 107
         Me.SplitContainer1.TabIndex = 2
         '
-        'DataGridView1
+        'btn_eliminar
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(776, 287)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'btn_agregar
-        '
-        Me.btn_agregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_agregar.Location = New System.Drawing.Point(12, 23)
-        Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(144, 72)
-        Me.btn_agregar.TabIndex = 0
-        Me.btn_agregar.Text = "Nuevo"
-        Me.btn_agregar.UseVisualStyleBackColor = True
-        '
-        'btn_editar
-        '
-        Me.btn_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_editar.Location = New System.Drawing.Point(226, 23)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(152, 72)
-        Me.btn_editar.TabIndex = 1
-        Me.btn_editar.Text = "Editar"
-        Me.btn_editar.UseVisualStyleBackColor = True
+        Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_eliminar.ForeColor = System.Drawing.Color.DarkRed
+        Me.btn_eliminar.Location = New System.Drawing.Point(632, 23)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(156, 72)
+        Me.btn_eliminar.TabIndex = 3
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = True
         '
         'btn_imprimir
         '
@@ -112,16 +97,39 @@ Partial Class Clientes
         Me.btn_imprimir.Text = "Imprimir"
         Me.btn_imprimir.UseVisualStyleBackColor = True
         '
-        'btn_eliminar
+        'btn_editar
         '
-        Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_eliminar.ForeColor = System.Drawing.Color.DarkRed
-        Me.btn_eliminar.Location = New System.Drawing.Point(632, 23)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(156, 72)
-        Me.btn_eliminar.TabIndex = 3
-        Me.btn_eliminar.Text = "Eliminar"
-        Me.btn_eliminar.UseVisualStyleBackColor = True
+        Me.btn_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_editar.Location = New System.Drawing.Point(226, 23)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(152, 72)
+        Me.btn_editar.TabIndex = 1
+        Me.btn_editar.Text = "Editar"
+        Me.btn_editar.UseVisualStyleBackColor = True
+        '
+        'btn_agregar
+        '
+        Me.btn_agregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_agregar.Location = New System.Drawing.Point(12, 23)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(144, 72)
+        Me.btn_agregar.TabIndex = 0
+        Me.btn_agregar.Text = "Nuevo"
+        Me.btn_agregar.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 16)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(776, 287)
+        Me.DataGridView1.TabIndex = 0
+        '
+        'VolverToolStripMenuItem
+        '
+        Me.VolverToolStripMenuItem.Name = "VolverToolStripMenuItem"
+        Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
+        Me.VolverToolStripMenuItem.Text = "Volver a Pantalla Principal"
         '
         'Clientes
         '
@@ -152,4 +160,5 @@ Partial Class Clientes
     Friend WithEvents btn_editar As Button
     Friend WithEvents btn_agregar As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
 End Class

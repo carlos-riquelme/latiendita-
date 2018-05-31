@@ -64,7 +64,7 @@ Partial Class inicio_admin
         '
         Me.RegistrarUsuariosToolStripMenuItem.Name = "RegistrarUsuariosToolStripMenuItem"
         Me.RegistrarUsuariosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RegistrarUsuariosToolStripMenuItem.Text = "Registrar Usuarios"
+        Me.RegistrarUsuariosToolStripMenuItem.Text = "Ver Usuarios"
         '
         'Button7
         '
