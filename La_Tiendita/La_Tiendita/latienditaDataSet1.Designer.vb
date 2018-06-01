@@ -883,7 +883,9 @@ Partial Public Class latienditaDataSet
             MyBase.Columns.Add(Me.columnidpermisos)
             Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombre)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("permisosKey1", New Global.System.Data.DataColumn() {Me.columnidpermisos}, false))
             Me.columnidpermisos.AllowDBNull = false
+            Me.columnidpermisos.Unique = true
             Me.columnnombre.AllowDBNull = false
             Me.columnnombre.MaxLength = 50
         End Sub
@@ -1033,6 +1035,10 @@ Partial Public Class latienditaDataSet
         
         Private columncreado As Global.System.Data.DataColumn
         
+        Private columncantidad As Global.System.Data.DataColumn
+        
+        Private columncreado1 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1109,6 +1115,22 @@ Partial Public Class latienditaDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property cantidadColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncantidad
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property creado1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncreado1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1145,9 +1167,9 @@ Partial Public Class latienditaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddproductosRow(ByVal idproducto As Integer, ByVal nombre As String, ByVal descripcion As String, ByVal idinventario As String, ByVal creado() As Byte) As productosRow
+        Public Overloads Function AddproductosRow(ByVal idproducto As Integer, ByVal nombre As String, ByVal descripcion As String, ByVal idinventario As String, ByVal creado() As Byte, ByVal cantidad As Integer, ByVal creado1 As Date) As productosRow
             Dim rowproductosRow As productosRow = CType(Me.NewRow,productosRow)
-            Dim columnValuesArray() As Object = New Object() {idproducto, nombre, descripcion, idinventario, creado}
+            Dim columnValuesArray() As Object = New Object() {idproducto, nombre, descripcion, idinventario, creado, cantidad, creado1}
             rowproductosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowproductosRow)
             Return rowproductosRow
@@ -1175,6 +1197,8 @@ Partial Public Class latienditaDataSet
             Me.columndescripcion = MyBase.Columns("descripcion")
             Me.columnidinventario = MyBase.Columns("idinventario")
             Me.columncreado = MyBase.Columns("creado")
+            Me.columncantidad = MyBase.Columns("cantidad")
+            Me.columncreado1 = MyBase.Columns("creado1")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1190,7 +1214,13 @@ Partial Public Class latienditaDataSet
             MyBase.Columns.Add(Me.columnidinventario)
             Me.columncreado = New Global.System.Data.DataColumn("creado", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncreado)
+            Me.columncantidad = New Global.System.Data.DataColumn("cantidad", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncantidad)
+            Me.columncreado1 = New Global.System.Data.DataColumn("creado1", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncreado1)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("productosKey1", New Global.System.Data.DataColumn() {Me.columnidproducto}, false))
             Me.columnidproducto.AllowDBNull = false
+            Me.columnidproducto.Unique = true
             Me.columnnombre.AllowDBNull = false
             Me.columnnombre.MaxLength = 50
             Me.columndescripcion.AllowDBNull = false
@@ -1198,6 +1228,9 @@ Partial Public Class latienditaDataSet
             Me.columnidinventario.AllowDBNull = false
             Me.columnidinventario.MaxLength = 50
             Me.columncreado.ReadOnly = true
+            Me.columncantidad.AllowDBNull = false
+            Me.columncreado1.AllowDBNull = false
+            Me.columncreado1.Caption = "creado"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1892,6 +1925,28 @@ Partial Public Class latienditaDataSet
             End Get
             Set
                 Me(Me.tableproductos.creadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property cantidad() As Integer
+            Get
+                Return CType(Me(Me.tableproductos.cantidadColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableproductos.cantidadColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property creado1() As Date
+            Get
+                Return CType(Me(Me.tableproductos.creado1Column),Date)
+            End Get
+            Set
+                Me(Me.tableproductos.creado1Column) = value
             End Set
         End Property
         
@@ -3082,17 +3137,21 @@ Namespace latienditaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("descripcion", "descripcion")
             tableMapping.ColumnMappings.Add("idinventario", "idinventario")
-            tableMapping.ColumnMappings.Add("creado", "creado")
+            tableMapping.ColumnMappings.Add("cantidad", "cantidad")
+            tableMapping.ColumnMappings.Add("creado", "creado1")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[productos] ([idproducto], [nombre], [descripcion], [idinventar"& _ 
-                "io]) VALUES (@idproducto, @nombre, @descripcion, @idinventario)"
+                "io], [cantidad], [creado]) VALUES (@idproducto, @nombre, @descripcion, @idinvent"& _ 
+                "ario, @cantidad, @creado)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idproducto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idproducto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@descripcion", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "descripcion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idinventario", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idinventario", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cantidad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "cantidad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@creado", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "creado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3105,11 +3164,17 @@ Namespace latienditaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT idproducto, nombre, descripcion, idinventario, creado FROM dbo.productos"
+            Me._commandCollection(0).CommandText = "SELECT idproducto, nombre, descripcion, idinventario, cantidad, creado FROM dbo.p"& _ 
+                "roductos"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT idproducto, nombre, descripcion, idinventario, cantidad, creado FROM dbo.p"& _ 
+                "roductos"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3134,6 +3199,19 @@ Namespace latienditaDataSetTableAdapters
             Dim dataTable As latienditaDataSet.productosDataTable = New latienditaDataSet.productosDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As latienditaDataSet.productosDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3168,7 +3246,7 @@ Namespace latienditaDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal idproducto As Integer, ByVal nombre As String, ByVal descripcion As String, ByVal idinventario As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal idproducto As Integer, ByVal nombre As String, ByVal descripcion As String, ByVal idinventario As String, ByVal cantidad As Integer, ByVal creado As Date) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(idproducto,Integer)
             If (nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nombre")
@@ -3185,6 +3263,8 @@ Namespace latienditaDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(3).Value = CType(idinventario,String)
             End If
+            Me.Adapter.InsertCommand.Parameters(4).Value = CType(cantidad,Integer)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(creado,Date)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3395,11 +3475,15 @@ Namespace latienditaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT idusuario, nombre, password, es_admin, creado FROM dbo.users"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT creado, es_admin, idusuario, nombre, password FROM users"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3424,6 +3508,19 @@ Namespace latienditaDataSetTableAdapters
             Dim dataTable As latienditaDataSet.usersDataTable = New latienditaDataSet.usersDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As latienditaDataSet.usersDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
