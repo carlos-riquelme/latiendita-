@@ -398,8 +398,6 @@ Partial Public Class latienditaDataSet
         
         Private columncomuna As Global.System.Data.DataColumn
         
-        Private columnregion As Global.System.Data.DataColumn
-        
         Private columncorreo As Global.System.Data.DataColumn
         
         Private columnidclientes As Global.System.Data.DataColumn
@@ -483,14 +481,6 @@ Partial Public Class latienditaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property regionColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnregion
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property correoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncorreo
@@ -550,9 +540,9 @@ Partial Public Class latienditaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal app As String, ByVal apm As String, ByVal direccion As String, ByVal comuna As String, ByVal _region As String, ByVal correo As String, ByVal creado As Date) As clientesRow
+        Public Overloads Function AddclientesRow(ByVal nombre As String, ByVal app As String, ByVal apm As String, ByVal direccion As String, ByVal comuna As String, ByVal correo As String, ByVal creado As Date) As clientesRow
             Dim rowclientesRow As clientesRow = CType(Me.NewRow,clientesRow)
-            Dim columnValuesArray() As Object = New Object() {nombre, app, apm, direccion, comuna, _region, correo, Nothing, creado}
+            Dim columnValuesArray() As Object = New Object() {nombre, app, apm, direccion, comuna, correo, Nothing, creado}
             rowclientesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowclientesRow)
             Return rowclientesRow
@@ -586,7 +576,6 @@ Partial Public Class latienditaDataSet
             Me.columnapm = MyBase.Columns("apm")
             Me.columndireccion = MyBase.Columns("direccion")
             Me.columncomuna = MyBase.Columns("comuna")
-            Me.columnregion = MyBase.Columns("region")
             Me.columncorreo = MyBase.Columns("correo")
             Me.columnidclientes = MyBase.Columns("idclientes")
             Me.columncreado = MyBase.Columns("creado")
@@ -605,11 +594,6 @@ Partial Public Class latienditaDataSet
             MyBase.Columns.Add(Me.columndireccion)
             Me.columncomuna = New Global.System.Data.DataColumn("comuna", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncomuna)
-            Me.columnregion = New Global.System.Data.DataColumn("region", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            Me.columnregion.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "regionColumn")
-            Me.columnregion.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnregion")
-            Me.columnregion.ExtendedProperties.Add("Generator_UserColumnName", "region")
-            MyBase.Columns.Add(Me.columnregion)
             Me.columncorreo = New Global.System.Data.DataColumn("correo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncorreo)
             Me.columnidclientes = New Global.System.Data.DataColumn("idclientes", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -627,8 +611,6 @@ Partial Public Class latienditaDataSet
             Me.columndireccion.MaxLength = 50
             Me.columncomuna.AllowDBNull = false
             Me.columncomuna.MaxLength = 50
-            Me.columnregion.AllowDBNull = false
-            Me.columnregion.MaxLength = 50
             Me.columncorreo.MaxLength = 50
             Me.columnidclientes.AutoIncrement = true
             Me.columnidclientes.AutoIncrementSeed = -1
@@ -1737,17 +1719,6 @@ Partial Public Class latienditaDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property _region() As String
-            Get
-                Return CType(Me(Me.tableclientes.regionColumn),String)
-            End Get
-            Set
-                Me(Me.tableclientes.regionColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property correo() As String
             Get
                 Try 
@@ -2335,7 +2306,6 @@ Namespace latienditaDataSetTableAdapters
             tableMapping.ColumnMappings.Add("apm", "apm")
             tableMapping.ColumnMappings.Add("direccion", "direccion")
             tableMapping.ColumnMappings.Add("comuna", "comuna")
-            tableMapping.ColumnMappings.Add("region", "region")
             tableMapping.ColumnMappings.Add("correo", "correo")
             tableMapping.ColumnMappings.Add("idclientes", "idclientes")
             tableMapping.ColumnMappings.Add("creado", "creado")
@@ -2352,12 +2322,17 @@ Namespace latienditaDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT idclientes, nombre, app, apm, direccion, comuna, region, correo, creado FR"& _ 
-                "OM dbo.clientes"
+            Me._commandCollection(0).CommandText = "SELECT idclientes, nombre, app, apm, direccion, comuna, correo, creado FROM dbo.c"& _ 
+                "lientes"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT idclientes, nombre, app, apm, direccion, comuna, correo, creado FROM dbo.c"& _ 
+                "lientes"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2382,6 +2357,19 @@ Namespace latienditaDataSetTableAdapters
             Dim dataTable As latienditaDataSet.clientesDataTable = New latienditaDataSet.clientesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As latienditaDataSet.clientesDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
         End Function
     End Class
     

@@ -16,4 +16,21 @@
         Me.ClientesTableAdapter.Fill(Me.LatienditaDataSet.clientes)
         Me.CenterToScreen()
     End Sub
+
+    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.ClientesTableAdapter.FillBy(Me.LatienditaDataSet.clientes)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+        DataGridView1.Refresh()
+    End Sub
 End Class

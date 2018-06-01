@@ -32,26 +32,25 @@ Partial Class Clientes
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
-        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
-        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdclientesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AppDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApmDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ComunaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RegionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CreadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
+        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -101,7 +100,7 @@ Partial Class Clientes
         '
         Me.btn_eliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_eliminar.ForeColor = System.Drawing.Color.DarkRed
-        Me.btn_eliminar.Location = New System.Drawing.Point(632, 23)
+        Me.btn_eliminar.Location = New System.Drawing.Point(673, 23)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(156, 72)
         Me.btn_eliminar.TabIndex = 3
@@ -111,7 +110,7 @@ Partial Class Clientes
         'btn_imprimir
         '
         Me.btn_imprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_imprimir.Location = New System.Drawing.Point(384, 23)
+        Me.btn_imprimir.Location = New System.Drawing.Point(329, 23)
         Me.btn_imprimir.Name = "btn_imprimir"
         Me.btn_imprimir.Size = New System.Drawing.Size(154, 72)
         Me.btn_imprimir.TabIndex = 2
@@ -121,7 +120,7 @@ Partial Class Clientes
         'btn_editar
         '
         Me.btn_editar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_editar.Location = New System.Drawing.Point(226, 23)
+        Me.btn_editar.Location = New System.Drawing.Point(171, 23)
         Me.btn_editar.Name = "btn_editar"
         Me.btn_editar.Size = New System.Drawing.Size(152, 72)
         Me.btn_editar.TabIndex = 1
@@ -140,29 +139,16 @@ Partial Class Clientes
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdclientesDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.AppDataGridViewTextBoxColumn, Me.ApmDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.ComunaDataGridViewTextBoxColumn, Me.RegionDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.CreadoDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdclientesDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.AppDataGridViewTextBoxColumn, Me.ApmDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.ComunaDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn, Me.CreadoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClientesBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(841, 315)
         Me.DataGridView1.TabIndex = 1
-        '
-        'LatienditaDataSet
-        '
-        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
-        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "clientes"
-        Me.ClientesBindingSource.DataSource = Me.LatienditaDataSet
         '
         'IdclientesDataGridViewTextBoxColumn
         '
@@ -201,12 +187,6 @@ Partial Class Clientes
         Me.ComunaDataGridViewTextBoxColumn.HeaderText = "comuna"
         Me.ComunaDataGridViewTextBoxColumn.Name = "ComunaDataGridViewTextBoxColumn"
         '
-        'RegionDataGridViewTextBoxColumn
-        '
-        Me.RegionDataGridViewTextBoxColumn.DataPropertyName = "region"
-        Me.RegionDataGridViewTextBoxColumn.HeaderText = "region"
-        Me.RegionDataGridViewTextBoxColumn.Name = "RegionDataGridViewTextBoxColumn"
-        '
         'CorreoDataGridViewTextBoxColumn
         '
         Me.CorreoDataGridViewTextBoxColumn.DataPropertyName = "correo"
@@ -218,6 +198,20 @@ Partial Class Clientes
         Me.CreadoDataGridViewTextBoxColumn.DataPropertyName = "creado"
         Me.CreadoDataGridViewTextBoxColumn.HeaderText = "creado"
         Me.CreadoDataGridViewTextBoxColumn.Name = "CreadoDataGridViewTextBoxColumn"
+        '
+        'ClientesBindingSource
+        '
+        Me.ClientesBindingSource.DataMember = "clientes"
+        Me.ClientesBindingSource.DataSource = Me.LatienditaDataSet
+        '
+        'LatienditaDataSet
+        '
+        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
+        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
         '
         'Clientes
         '
@@ -235,8 +229,8 @@ Partial Class Clientes
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -259,7 +253,6 @@ Partial Class Clientes
     Friend WithEvents ApmDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DireccionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ComunaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RegionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CorreoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CreadoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ClientesBindingSource As BindingSource
