@@ -7,7 +7,7 @@
         Me.Close()
     End Sub
 
-    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
+    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) 
         nv_cliente.Show()
     End Sub
 
@@ -26,11 +26,43 @@
 
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) 
-        DataGridView1.Refresh()
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub FillBy1ToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.ClientesTableAdapter.FillBy1(Me.LatienditaDataSet.clientes)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        ClientesTableAdapter.Fill(LatienditaDataSet.clientes)
+    End Sub
+
+    Private Sub GuardarToolStripButton_Click(sender As Object, e As EventArgs) Handles GuardarToolStripButton.Click
+        Try
+            Me.Validate()
+            Me.ClientesBindingSource.EndEdit()
+            ClientesTableAdapter.Update(LatienditaDataSet.clientes)
+            MsgBox("Actualización Exitosa")
+        Catch ex As Exception
+            MsgBox("Se produjo un error y no sabemos cuál es. Mala suerte.")
+        End Try
+
+    End Sub
+
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+        For Each row As DataGridViewRow In ClientesDataGridView.SelectedRows
+            ClientesDataGridView.Rows.Remove(row)
+        Next
+
     End Sub
 End Class

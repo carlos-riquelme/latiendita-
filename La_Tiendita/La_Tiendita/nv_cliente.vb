@@ -74,7 +74,7 @@ Public Class nv_cliente
 
 
             MessageBox.Show("Cliente registrado exitosamente")
-            Clientes.DataGridView1.Refresh()
+            Clientes.ClientesDataGridView.Refresh()
             Me.Close()
 
 

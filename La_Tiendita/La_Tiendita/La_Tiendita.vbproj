@@ -78,6 +78,12 @@
     <Compile Include="Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="edgew.Designer.vb">
+      <DependentUpon>edgew.vb</DependentUpon>
+    </Compile>
+    <Compile Include="edgew.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="inicio-admin.Designer.vb">
       <DependentUpon>inicio-admin.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edgew.resx">
+      <DependentUpon>edgew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio-admin.resx">
       <DependentUpon>inicio-admin.vb</DependentUpon>
