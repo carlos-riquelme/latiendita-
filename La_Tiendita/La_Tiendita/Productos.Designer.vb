@@ -28,15 +28,7 @@ Partial Class Productos
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverAPantallaPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -49,21 +41,38 @@ Partial Class Productos
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ProductosTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.productosTableAdapter()
-        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
+        Me.actualizar = New System.Windows.Forms.ToolStripButton()
         Me.GuardarToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ImprimirToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.IdproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdinventarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
+        Me.ProductosTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.productosTableAdapter()
+        Me.Buscar = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -97,7 +106,13 @@ Partial Class Productos
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton4)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton3)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton2)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton1)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.TextBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Buscar)
         '
         'SplitContainer1.Panel2
         '
@@ -108,74 +123,25 @@ Partial Class Productos
         Me.SplitContainer1.SplitterDistance = 107
         Me.SplitContainer1.TabIndex = 3
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(215, 30)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(370, 46)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Aquí va el buscador"
-        '
         'ProductosDataGridView
         '
         Me.ProductosDataGridView.AllowUserToOrderColumns = True
         Me.ProductosDataGridView.AutoGenerateColumns = False
         Me.ProductosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.ProductosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdproductoDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn, Me.IdinventarioDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn})
         Me.ProductosDataGridView.DataSource = Me.ProductosBindingSource
         Me.ProductosDataGridView.Location = New System.Drawing.Point(12, 28)
         Me.ProductosDataGridView.Name = "ProductosDataGridView"
         Me.ProductosDataGridView.Size = New System.Drawing.Size(776, 275)
         Me.ProductosDataGridView.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "idproducto"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "idproducto"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "nombre"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "descripcion"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "descripcion"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "idinventario"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "idinventario"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "cantidad"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "cantidad"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'ProductosBindingSource
-        '
-        Me.ProductosBindingSource.DataMember = "productos"
-        Me.ProductosBindingSource.DataSource = Me.LatienditaDataSet
-        '
-        'LatienditaDataSet
-        '
-        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
-        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'BindingNavigator1
         '
         Me.BindingNavigator1.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.BindingNavigator1.BindingSource = Me.ProductosBindingSource
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.toolStripSeparator})
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.actualizar, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.ToolStripButton1, Me.toolStripSeparator})
         Me.BindingNavigator1.Location = New System.Drawing.Point(0, 0)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -272,18 +238,14 @@ Partial Class Productos
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'ProductosTableAdapter
+        'actualizar
         '
-        Me.ProductosTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Nothing
-        Me.TableAdapterManager.permisosTableAdapter = Nothing
-        Me.TableAdapterManager.productosTableAdapter = Me.ProductosTableAdapter
-        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Nothing
+        Me.actualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.actualizar.Image = CType(resources.GetObject("actualizar.Image"), System.Drawing.Image)
+        Me.actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.actualizar.Name = "actualizar"
+        Me.actualizar.Size = New System.Drawing.Size(63, 22)
+        Me.actualizar.Text = "Actualizar"
         '
         'GuardarToolStripButton
         '
@@ -303,10 +265,151 @@ Partial Class Productos
         Me.ImprimirToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.ImprimirToolStripButton.Text = "&Imprimir"
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(71, 22)
+        Me.ToolStripButton1.Text = "Vista Previa"
+        '
         'toolStripSeparator
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
         Me.toolStripSeparator.Size = New System.Drawing.Size(6, 25)
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'PrintDocument1
+        '
+        '
+        'IdproductoDataGridViewTextBoxColumn
+        '
+        Me.IdproductoDataGridViewTextBoxColumn.DataPropertyName = "idproducto"
+        Me.IdproductoDataGridViewTextBoxColumn.HeaderText = "idproducto"
+        Me.IdproductoDataGridViewTextBoxColumn.Name = "IdproductoDataGridViewTextBoxColumn"
+        Me.IdproductoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
+        'IdinventarioDataGridViewTextBoxColumn
+        '
+        Me.IdinventarioDataGridViewTextBoxColumn.DataPropertyName = "idinventario"
+        Me.IdinventarioDataGridViewTextBoxColumn.HeaderText = "idinventario"
+        Me.IdinventarioDataGridViewTextBoxColumn.Name = "IdinventarioDataGridViewTextBoxColumn"
+        '
+        'CantidadDataGridViewTextBoxColumn
+        '
+        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "productos"
+        Me.ProductosBindingSource.DataSource = Me.LatienditaDataSet
+        '
+        'LatienditaDataSet
+        '
+        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
+        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ProductosTableAdapter
+        '
+        Me.ProductosTableAdapter.ClearBeforeFill = True
+        '
+        'Buscar
+        '
+        Me.Buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Buscar.Location = New System.Drawing.Point(394, 43)
+        Me.Buscar.Name = "Buscar"
+        Me.Buscar.Size = New System.Drawing.Size(91, 24)
+        Me.Buscar.TabIndex = 0
+        Me.Buscar.Text = "Buscar"
+        Me.Buscar.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.AcceptsReturn = True
+        Me.TextBox1.AcceptsTab = True
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(12, 41)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(365, 26)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(72, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(77, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Buscador"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(13, 74)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(82, 17)
+        Me.RadioButton1.TabIndex = 3
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "ID Producto"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(101, 74)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(62, 17)
+        Me.RadioButton2.TabIndex = 4
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Nombre"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(169, 74)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(81, 17)
+        Me.RadioButton3.TabIndex = 5
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Descripción"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(256, 74)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(86, 17)
+        Me.RadioButton4.TabIndex = 6
+        Me.RadioButton4.TabStop = True
+        Me.RadioButton4.Text = "ID Inventario"
+        Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'Productos
         '
@@ -327,11 +430,11 @@ Partial Class Productos
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -341,7 +444,6 @@ Partial Class Productos
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents VolverAPantallaPrincipalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label1 As Label
     Friend WithEvents BindingNavigator1 As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
@@ -355,16 +457,26 @@ Partial Class Productos
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents LatienditaDataSet As latienditaDataSet
-    Friend WithEvents ProductosBindingSource As BindingSource
-    Friend WithEvents ProductosTableAdapter As latienditaDataSetTableAdapters.productosTableAdapter
     Friend WithEvents ProductosDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents TableAdapterManager As latienditaDataSetTableAdapters.TableAdapterManager
     Friend WithEvents GuardarToolStripButton As ToolStripButton
     Friend WithEvents ImprimirToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents actualizar As ToolStripButton
+    Friend WithEvents ProductosBindingSource As BindingSource
+    Friend WithEvents ProductosTableAdapter As latienditaDataSetTableAdapters.productosTableAdapter
+    Friend WithEvents IdproductoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents IdinventarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Buscar As Button
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class

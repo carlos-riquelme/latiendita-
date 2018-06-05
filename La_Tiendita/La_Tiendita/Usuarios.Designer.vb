@@ -28,38 +28,41 @@ Partial Class Usuarios
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.UsersDataGridView = New System.Windows.Forms.DataGridView()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.GuardarToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ImprimirToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.preview = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.UsersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
-        Me.UsersTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.usersTableAdapter()
-        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.UsersDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsersTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.usersTableAdapter()
+        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
-        CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -90,7 +93,7 @@ Partial Class Usuarios
         Me.BindingNavigator1.BindingSource = Me.UsersBindingSource
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.toolStripSeparator, Me.toolStripSeparator2, Me.ToolStripButton1})
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton2, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator, Me.toolStripSeparator2})
         Me.BindingNavigator1.Location = New System.Drawing.Point(0, 24)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -101,6 +104,41 @@ Partial Class Usuarios
         Me.BindingNavigator1.Size = New System.Drawing.Size(599, 25)
         Me.BindingNavigator1.TabIndex = 1
         Me.BindingNavigator1.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
+        '
+        'UsersBindingSource
+        '
+        Me.UsersBindingSource.DataMember = "users"
+        Me.UsersBindingSource.DataSource = Me.LatienditaDataSet
+        '
+        'LatienditaDataSet
+        '
+        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
+        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
+        Me.BindingNavigatorCountItem.Text = "de {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -134,16 +172,9 @@ Partial Class Usuarios
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
-        Me.BindingNavigatorCountItem.Text = "de {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -166,43 +197,22 @@ Partial Class Usuarios
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
-        '
-        'UsersDataGridView
-        '
-        Me.UsersDataGridView.AllowUserToOrderColumns = True
-        Me.UsersDataGridView.AutoGenerateColumns = False
-        Me.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UsersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
-        Me.UsersDataGridView.DataSource = Me.UsersBindingSource
-        Me.UsersDataGridView.Location = New System.Drawing.Point(12, 52)
-        Me.UsersDataGridView.Name = "UsersDataGridView"
-        Me.UsersDataGridView.Size = New System.Drawing.Size(567, 386)
-        Me.UsersDataGridView.TabIndex = 2
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(63, 22)
+        Me.ToolStripButton2.Text = "Actualizar"
         '
         'GuardarToolStripButton
         '
@@ -222,6 +232,15 @@ Partial Class Usuarios
         Me.ImprimirToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.ImprimirToolStripButton.Text = "&Imprimir"
         '
+        'preview
+        '
+        Me.preview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.preview.Image = CType(resources.GetObject("preview.Image"), System.Drawing.Image)
+        Me.preview.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.preview.Name = "preview"
+        Me.preview.Size = New System.Drawing.Size(71, 22)
+        Me.preview.Text = "Vista Previa"
+        '
         'toolStripSeparator
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
@@ -232,37 +251,17 @@ Partial Class Usuarios
         Me.toolStripSeparator2.Name = "toolStripSeparator2"
         Me.toolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'UsersBindingSource
+        'UsersDataGridView
         '
-        Me.UsersBindingSource.DataMember = "users"
-        Me.UsersBindingSource.DataSource = Me.LatienditaDataSet
-        '
-        'LatienditaDataSet
-        '
-        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
-        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UsersTableAdapter
-        '
-        Me.UsersTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Nothing
-        Me.TableAdapterManager.permisosTableAdapter = Nothing
-        Me.TableAdapterManager.productosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Me.UsersTableAdapter
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(63, 22)
-        Me.ToolStripButton1.Text = "Actualizar"
+        Me.UsersDataGridView.AllowUserToOrderColumns = True
+        Me.UsersDataGridView.AutoGenerateColumns = False
+        Me.UsersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.UsersDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.UsersDataGridView.DataSource = Me.UsersBindingSource
+        Me.UsersDataGridView.Location = New System.Drawing.Point(12, 62)
+        Me.UsersDataGridView.Name = "UsersDataGridView"
+        Me.UsersDataGridView.Size = New System.Drawing.Size(575, 376)
+        Me.UsersDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
         '
@@ -289,6 +288,33 @@ Partial Class Usuarios
         Me.DataGridViewTextBoxColumn4.HeaderText = "Es Administrador"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         '
+        'UsersTableAdapter
+        '
+        Me.UsersTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Nothing
+        Me.TableAdapterManager.permisosTableAdapter = Nothing
+        Me.TableAdapterManager.productosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Me.UsersTableAdapter
+        '
+        'PrintDocument1
+        '
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(149, 154)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(280, 39)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Lista de Usuarios"
+        Me.Label1.Visible = False
+        '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -297,6 +323,7 @@ Partial Class Usuarios
         Me.Controls.Add(Me.UsersDataGridView)
         Me.Controls.Add(Me.BindingNavigator1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "Usuarios"
         Me.Text = "Usuarios - Administrador"
         Me.MenuStrip1.ResumeLayout(False)
@@ -304,9 +331,9 @@ Partial Class Usuarios
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
-        CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UsersDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -337,9 +364,12 @@ Partial Class Usuarios
     Friend WithEvents ImprimirToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
     Friend WithEvents toolStripSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents preview As ToolStripButton
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents Label1 As Label
 End Class

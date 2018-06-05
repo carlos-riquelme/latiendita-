@@ -49,15 +49,17 @@ Partial Class Clientes
         Me.ImprimirToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
-        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
+        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.preview = New System.Windows.Forms.ToolStripButton()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -128,7 +130,7 @@ Partial Class Clientes
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
         Me.BindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.toolStripSeparator})
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator})
         Me.BindingNavigator1.Location = New System.Drawing.Point(0, 0)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -284,24 +286,6 @@ Partial Class Clientes
         Me.ClientesDataGridView.Size = New System.Drawing.Size(727, 284)
         Me.ClientesDataGridView.TabIndex = 0
         '
-        'ClientesTableAdapter
-        '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.permisosTableAdapter = Nothing
-        Me.TableAdapterManager.productosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Nothing
-        '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.UseEXDialog = True
-        '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "idclientes"
@@ -338,6 +322,33 @@ Partial Class Clientes
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "comuna"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Comuna"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'ClientesTableAdapter
+        '
+        Me.ClientesTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.permisosTableAdapter = Nothing
+        Me.TableAdapterManager.productosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'preview
+        '
+        Me.preview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.preview.Image = CType(resources.GetObject("preview.Image"), System.Drawing.Image)
+        Me.preview.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.preview.Name = "preview"
+        Me.preview.Size = New System.Drawing.Size(71, 22)
+        Me.preview.Text = "Vista Previa"
         '
         'Clientes
         '
@@ -401,4 +412,6 @@ Partial Class Clientes
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents preview As ToolStripButton
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
 End Class
