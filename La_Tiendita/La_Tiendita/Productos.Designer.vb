@@ -56,13 +56,8 @@ Partial Class Productos
         Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
         Me.ProductosTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.productosTableAdapter()
-        Me.Buscar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -80,7 +75,7 @@ Partial Class Productos
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VolverToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(572, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -106,20 +101,15 @@ Partial Class Productos
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton4)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton3)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton2)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.RadioButton1)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.TextBox1)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Buscar)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button1)
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.Controls.Add(Me.ProductosDataGridView)
         Me.SplitContainer1.Panel2.Controls.Add(Me.BindingNavigator1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(800, 426)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Label1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(572, 426)
         Me.SplitContainer1.SplitterDistance = 107
         Me.SplitContainer1.TabIndex = 3
         '
@@ -149,7 +139,7 @@ Partial Class Productos
         Me.BindingNavigator1.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
-        Me.BindingNavigator1.Size = New System.Drawing.Size(800, 25)
+        Me.BindingNavigator1.Size = New System.Drawing.Size(788, 25)
         Me.BindingNavigator1.TabIndex = 1
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
@@ -337,85 +327,31 @@ Partial Class Productos
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
         '
-        'Buscar
+        'Button1
         '
-        Me.Buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Buscar.Location = New System.Drawing.Point(394, 43)
-        Me.Buscar.Name = "Buscar"
-        Me.Buscar.Size = New System.Drawing.Size(91, 24)
-        Me.Buscar.TabIndex = 0
-        Me.Buscar.Text = "Buscar"
-        Me.Buscar.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.AcceptsReturn = True
-        Me.TextBox1.AcceptsTab = True
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(12, 41)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(365, 26)
-        Me.TextBox1.TabIndex = 1
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(114, 24)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(334, 67)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(72, 18)
+        Me.Label1.Location = New System.Drawing.Point(440, 96)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 20)
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Buscador"
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(13, 74)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(82, 17)
-        Me.RadioButton1.TabIndex = 3
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "ID Producto"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(101, 74)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(62, 17)
-        Me.RadioButton2.TabIndex = 4
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Nombre"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(169, 74)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(81, 17)
-        Me.RadioButton3.TabIndex = 5
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Descripción"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'RadioButton4
-        '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(256, 74)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(86, 17)
-        Me.RadioButton4.TabIndex = 6
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "ID Inventario"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
         '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(572, 450)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -424,7 +360,6 @@ Partial Class Productos
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.Panel2.PerformLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -472,11 +407,6 @@ Partial Class Productos
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdinventarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Buscar As Button
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
 End Class

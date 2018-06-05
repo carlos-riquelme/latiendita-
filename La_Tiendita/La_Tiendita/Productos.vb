@@ -216,8 +216,7 @@
         ProductosTableAdapter.Fill(LatienditaDataSet.productos)
     End Sub
 
-    Private Sub Buscar_Click(sender As Object, e As EventArgs) Handles Buscar.Click
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        busca_prod.Show()
     End Sub
-
 End Class
