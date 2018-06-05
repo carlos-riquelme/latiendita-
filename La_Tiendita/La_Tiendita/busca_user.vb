@@ -1,18 +1,18 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class busca_prod
+Public Class busca_user
 
     Dim connection As New SqlConnection("Data Source=<<NOMBRESERVIDORSQLSERVER>>;Initial Catalog=latiendita;Integrated Security=True")
 
-    Private Sub busca_prod_load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub busca_user_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: esta línea de código carga datos en la tabla 'LatienditaDataSet.users' Puede moverla o quitarla según sea necesario.
+        'Me.UsersTableAdapter.Fill(Me.LatienditaDataSet.users)
         FilterData("")
-
     End Sub
 
     Public Sub FilterData(valueToSearch As String)
         'SELECT * From Users WHERE CONCAT(fname, lname, age) like '%F%'
-        Dim searchQuery As String = "SELECT * From productos WHERE CONCAT(idproducto, nombre, descripcion, idinventario) like '%" & TextBox1.text & "%'"
+        Dim searchQuery As String = "SELECT * From users WHERE CONCAT(idusuario, nombre) like '%" & TextBox1.Text & "%'"
 
         Dim command As New SqlCommand(searchQuery, connection)
         Dim adapter As New SqlDataAdapter(command)
@@ -35,4 +35,6 @@ Public Class busca_prod
         FilterData(TextBox1.Text)
 
     End Sub
+
+
 End Class

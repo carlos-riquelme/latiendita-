@@ -28,7 +28,15 @@ Partial Class Productos
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverAPantallaPrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ProductosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.IdproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdinventarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -46,28 +54,20 @@ Partial Class Productos
         Me.ImprimirToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.IdproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdinventarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
         Me.ProductosTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.productosTableAdapter()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BindingNavigator1.SuspendLayout()
         CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -113,6 +113,16 @@ Partial Class Productos
         Me.SplitContainer1.SplitterDistance = 107
         Me.SplitContainer1.TabIndex = 3
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(114, 24)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(334, 67)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ProductosDataGridView
         '
         Me.ProductosDataGridView.AllowUserToOrderColumns = True
@@ -124,6 +134,47 @@ Partial Class Productos
         Me.ProductosDataGridView.Name = "ProductosDataGridView"
         Me.ProductosDataGridView.Size = New System.Drawing.Size(776, 275)
         Me.ProductosDataGridView.TabIndex = 1
+        '
+        'IdproductoDataGridViewTextBoxColumn
+        '
+        Me.IdproductoDataGridViewTextBoxColumn.DataPropertyName = "idproducto"
+        Me.IdproductoDataGridViewTextBoxColumn.HeaderText = "idproducto"
+        Me.IdproductoDataGridViewTextBoxColumn.Name = "IdproductoDataGridViewTextBoxColumn"
+        Me.IdproductoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        '
+        'IdinventarioDataGridViewTextBoxColumn
+        '
+        Me.IdinventarioDataGridViewTextBoxColumn.DataPropertyName = "idinventario"
+        Me.IdinventarioDataGridViewTextBoxColumn.HeaderText = "idinventario"
+        Me.IdinventarioDataGridViewTextBoxColumn.Name = "IdinventarioDataGridViewTextBoxColumn"
+        '
+        'CantidadDataGridViewTextBoxColumn
+        '
+        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
+        '
+        'ProductosBindingSource
+        '
+        Me.ProductosBindingSource.DataMember = "productos"
+        Me.ProductosBindingSource.DataSource = Me.LatienditaDataSet
+        '
+        'LatienditaDataSet
+        '
+        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
+        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigator1
         '
@@ -269,6 +320,16 @@ Partial Class Productos
         Me.toolStripSeparator.Name = "toolStripSeparator"
         Me.toolStripSeparator.Size = New System.Drawing.Size(6, 25)
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(440, 96)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
+        '
         'PrintPreviewDialog1
         '
         Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
@@ -282,70 +343,9 @@ Partial Class Productos
         'PrintDocument1
         '
         '
-        'IdproductoDataGridViewTextBoxColumn
-        '
-        Me.IdproductoDataGridViewTextBoxColumn.DataPropertyName = "idproducto"
-        Me.IdproductoDataGridViewTextBoxColumn.HeaderText = "idproducto"
-        Me.IdproductoDataGridViewTextBoxColumn.Name = "IdproductoDataGridViewTextBoxColumn"
-        Me.IdproductoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        '
-        'IdinventarioDataGridViewTextBoxColumn
-        '
-        Me.IdinventarioDataGridViewTextBoxColumn.DataPropertyName = "idinventario"
-        Me.IdinventarioDataGridViewTextBoxColumn.HeaderText = "idinventario"
-        Me.IdinventarioDataGridViewTextBoxColumn.Name = "IdinventarioDataGridViewTextBoxColumn"
-        '
-        'CantidadDataGridViewTextBoxColumn
-        '
-        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
-        '
-        'ProductosBindingSource
-        '
-        Me.ProductosBindingSource.DataMember = "productos"
-        Me.ProductosBindingSource.DataSource = Me.LatienditaDataSet
-        '
-        'LatienditaDataSet
-        '
-        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
-        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ProductosTableAdapter
         '
         Me.ProductosTableAdapter.ClearBeforeFill = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(114, 24)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(334, 67)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(440, 96)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
-        Me.Label1.Visible = False
         '
         'Productos
         '
@@ -365,11 +365,11 @@ Partial Class Productos
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.ProductosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
-        CType(Me.ProductosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

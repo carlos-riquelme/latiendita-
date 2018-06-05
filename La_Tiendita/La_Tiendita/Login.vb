@@ -8,7 +8,7 @@ Public Class Login
     Dim sqlquery As String
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        con.ConnectionString = "Data Source=ANC-CRIQUELME;Initial Catalog=latiendita;Integrated Security=True"
+        con.ConnectionString = "Data Source=<<NOMBRESERVIDORSQLSERVER>>;Initial Catalog=latiendita;Integrated Security=True"
         CenterToScreen()
         Me.Show()
         TextBox1.Select()

@@ -211,4 +211,7 @@
 
     End Sub
 
+    Private Sub buscar_Click(sender As Object, e As EventArgs) Handles buscar.Click
+        busca_user.Show()
+    End Sub
 End Class

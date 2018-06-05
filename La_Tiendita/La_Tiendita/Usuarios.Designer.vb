@@ -57,6 +57,7 @@ Partial Class Usuarios
         Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.buscar = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigator1.SuspendLayout()
@@ -93,7 +94,7 @@ Partial Class Usuarios
         Me.BindingNavigator1.BindingSource = Me.UsersBindingSource
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton2, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator, Me.toolStripSeparator2})
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton2, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator, Me.toolStripSeparator2, Me.buscar})
         Me.BindingNavigator1.Location = New System.Drawing.Point(0, 24)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -315,6 +316,15 @@ Partial Class Usuarios
         Me.Label1.Text = "Lista de Usuarios"
         Me.Label1.Visible = False
         '
+        'buscar
+        '
+        Me.buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.buscar.Image = CType(resources.GetObject("buscar.Image"), System.Drawing.Image)
+        Me.buscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.buscar.Name = "buscar"
+        Me.buscar.Size = New System.Drawing.Size(46, 22)
+        Me.buscar.Text = "Buscar"
+        '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -372,4 +382,5 @@ Partial Class Usuarios
     Friend WithEvents ToolStripButton2 As ToolStripButton
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents Label1 As Label
+    Friend WithEvents buscar As ToolStripButton
 End Class

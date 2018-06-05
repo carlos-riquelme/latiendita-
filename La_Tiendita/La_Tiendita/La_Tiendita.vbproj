@@ -72,22 +72,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="busca_cliente.Designer.vb">
+      <DependentUpon>busca_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="busca_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="busca_prod.Designer.vb">
       <DependentUpon>busca_prod.vb</DependentUpon>
     </Compile>
     <Compile Include="busca_prod.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="busca_user.Designer.vb">
+      <DependentUpon>busca_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="busca_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Clientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="edgew.Designer.vb">
-      <DependentUpon>edgew.vb</DependentUpon>
-    </Compile>
-    <Compile Include="edgew.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inicio-admin.Designer.vb">
@@ -125,46 +131,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="nv_cliente.Designer.vb">
-      <DependentUpon>nv_cliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="nv_cliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nv_producto.Designer.vb">
-      <DependentUpon>nv_producto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="nv_producto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="nv_usuario.Designer.vb">
-      <DependentUpon>nv_usuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="nv_usuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Producto.Designer.vb">
-      <DependentUpon>Producto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Producto.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Productos.Designer.vb">
       <DependentUpon>Productos.vb</DependentUpon>
     </Compile>
     <Compile Include="Productos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="prueba.Designer.vb">
-      <DependentUpon>prueba.vb</DependentUpon>
-    </Compile>
-    <Compile Include="prueba.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuario.Designer.vb">
-      <DependentUpon>Usuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Usuarios.Designer.vb">
@@ -175,14 +145,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="busca_cliente.resx">
+      <DependentUpon>busca_cliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="busca_prod.resx">
       <DependentUpon>busca_prod.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="busca_user.resx">
+      <DependentUpon>busca_user.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="edgew.resx">
-      <DependentUpon>edgew.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio-admin.resx">
       <DependentUpon>inicio-admin.vb</DependentUpon>
@@ -196,26 +169,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="nv_cliente.resx">
-      <DependentUpon>nv_cliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nv_producto.resx">
-      <DependentUpon>nv_producto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="nv_usuario.resx">
-      <DependentUpon>nv_usuario.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Producto.resx">
-      <DependentUpon>Producto.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="prueba.resx">
-      <DependentUpon>prueba.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuario.resx">
-      <DependentUpon>Usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>

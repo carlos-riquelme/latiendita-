@@ -27,12 +27,14 @@ Partial Class Clientes
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VolverToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.ClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LatienditaDataSet = New La_Tiendita.latienditaDataSet()
+        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
+        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -47,6 +49,7 @@ Partial Class Clientes
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.GuardarToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ImprimirToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.preview = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.ClientesDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,20 +58,13 @@ Partial Class Clientes
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientesTableAdapter = New La_Tiendita.latienditaDataSetTableAdapters.clientesTableAdapter()
-        Me.TableAdapterManager = New La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager()
-        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.preview = New System.Windows.Forms.ToolStripButton()
-        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.Panel2.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
-        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.BindingNavigator1.SuspendLayout()
         CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -94,34 +90,36 @@ Partial Class Clientes
         Me.VolverToolStripMenuItem.Size = New System.Drawing.Size(210, 22)
         Me.VolverToolStripMenuItem.Text = "Volver a Pantalla Principal"
         '
-        'SplitContainer1
+        'ClientesBindingSource
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 24)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+        Me.ClientesBindingSource.DataMember = "clientes"
+        Me.ClientesBindingSource.DataSource = Me.LatienditaDataSet
         '
-        'SplitContainer1.Panel1
+        'LatienditaDataSet
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Label1)
+        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
+        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'SplitContainer1.Panel2
+        'ClientesTableAdapter
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.BindingNavigator1)
-        Me.SplitContainer1.Panel2.Controls.Add(Me.ClientesDataGridView)
-        Me.SplitContainer1.Size = New System.Drawing.Size(742, 426)
-        Me.SplitContainer1.SplitterDistance = 107
-        Me.SplitContainer1.TabIndex = 2
+        Me.ClientesTableAdapter.ClearBeforeFill = True
         '
-        'Label1
+        'TableAdapterManager
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(171, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(370, 46)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Aquí va el buscador"
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.clientesTableAdapter = Nothing
+        Me.TableAdapterManager.Connection = Nothing
+        Me.TableAdapterManager.permisosTableAdapter = Nothing
+        Me.TableAdapterManager.productosTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.usersTableAdapter = Nothing
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'PrintDocument1
+        '
         '
         'BindingNavigator1
         '
@@ -130,8 +128,8 @@ Partial Class Clientes
         Me.BindingNavigator1.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigator1.DeleteItem = Me.BindingNavigatorDeleteItem
         Me.BindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator})
-        Me.BindingNavigator1.Location = New System.Drawing.Point(0, 0)
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator1, Me.ToolStripButton1, Me.GuardarToolStripButton, Me.ImprimirToolStripButton, Me.preview, Me.toolStripSeparator, Me.ToolStripButton2})
+        Me.BindingNavigator1.Location = New System.Drawing.Point(0, 24)
         Me.BindingNavigator1.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigator1.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.BindingNavigator1.MoveNextItem = Me.BindingNavigatorMoveNextItem
@@ -139,7 +137,7 @@ Partial Class Clientes
         Me.BindingNavigator1.Name = "BindingNavigator1"
         Me.BindingNavigator1.PositionItem = Me.BindingNavigatorPositionItem
         Me.BindingNavigator1.Size = New System.Drawing.Size(742, 25)
-        Me.BindingNavigator1.TabIndex = 1
+        Me.BindingNavigator1.TabIndex = 3
         Me.BindingNavigator1.Text = "BindingNavigator1"
         '
         'BindingNavigatorAddNewItem
@@ -150,16 +148,6 @@ Partial Class Clientes
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
-        'ClientesBindingSource
-        '
-        Me.ClientesBindingSource.DataMember = "clientes"
-        Me.ClientesBindingSource.DataSource = Me.LatienditaDataSet
-        '
-        'LatienditaDataSet
-        '
-        Me.LatienditaDataSet.DataSetName = "latienditaDataSet"
-        Me.LatienditaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -269,6 +257,15 @@ Partial Class Clientes
         Me.ImprimirToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.ImprimirToolStripButton.Text = "&Imprimir"
         '
+        'preview
+        '
+        Me.preview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.preview.Image = CType(resources.GetObject("preview.Image"), System.Drawing.Image)
+        Me.preview.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.preview.Name = "preview"
+        Me.preview.Size = New System.Drawing.Size(71, 22)
+        Me.preview.Text = "Vista Previa"
+        '
         'toolStripSeparator
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
@@ -280,11 +277,11 @@ Partial Class Clientes
         Me.ClientesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ClientesDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.ClientesDataGridView.DataSource = Me.ClientesBindingSource
-        Me.ClientesDataGridView.Location = New System.Drawing.Point(12, 28)
+        Me.ClientesDataGridView.Location = New System.Drawing.Point(3, 52)
         Me.ClientesDataGridView.MultiSelect = False
         Me.ClientesDataGridView.Name = "ClientesDataGridView"
         Me.ClientesDataGridView.Size = New System.Drawing.Size(727, 284)
-        Me.ClientesDataGridView.TabIndex = 0
+        Me.ClientesDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn7
         '
@@ -323,55 +320,43 @@ Partial Class Clientes
         Me.DataGridViewTextBoxColumn5.HeaderText = "Comuna"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
-        'ClientesTableAdapter
+        'ToolStripButton2
         '
-        Me.ClientesTableAdapter.ClearBeforeFill = True
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(46, 22)
+        Me.ToolStripButton2.Text = "Buscar"
         '
-        'TableAdapterManager
+        'Label1
         '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.clientesTableAdapter = Nothing
-        Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.permisosTableAdapter = Nothing
-        Me.TableAdapterManager.productosTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = La_Tiendita.latienditaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.usersTableAdapter = Nothing
-        '
-        'PrintDialog1
-        '
-        Me.PrintDialog1.UseEXDialog = True
-        '
-        'preview
-        '
-        Me.preview.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.preview.Image = CType(resources.GetObject("preview.Image"), System.Drawing.Image)
-        Me.preview.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.preview.Name = "preview"
-        Me.preview.Size = New System.Drawing.Size(71, 22)
-        Me.preview.Text = "Vista Previa"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(311, 183)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Label1"
+        Me.Label1.Visible = False
         '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(742, 450)
-        Me.Controls.Add(Me.SplitContainer1)
+        Me.ClientSize = New System.Drawing.Size(742, 348)
+        Me.Controls.Add(Me.BindingNavigator1)
+        Me.Controls.Add(Me.ClientesDataGridView)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "Clientes"
         Me.Text = "Clientes"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.PerformLayout()
-        Me.SplitContainer1.Panel2.ResumeLayout(False)
-        Me.SplitContainer1.Panel2.PerformLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BindingNavigator1.ResumeLayout(False)
         Me.BindingNavigator1.PerformLayout()
-        CType(Me.ClientesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LatienditaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientesDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -380,13 +365,13 @@ Partial Class Clientes
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents VolverToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LatienditaDataSet As latienditaDataSet
     Friend WithEvents ClientesTableAdapter As latienditaDataSetTableAdapters.clientesTableAdapter
     Friend WithEvents ClientesBindingSource As BindingSource
     Friend WithEvents TableAdapterManager As latienditaDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents ClientesDataGridView As DataGridView
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents BindingNavigator1 As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
@@ -399,19 +384,19 @@ Partial Class Clientes
     Friend WithEvents BindingNavigatorMoveNextItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
-    Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents ToolStripButton1 As ToolStripButton
     Friend WithEvents GuardarToolStripButton As ToolStripButton
     Friend WithEvents ImprimirToolStripButton As ToolStripButton
+    Friend WithEvents preview As ToolStripButton
     Friend WithEvents toolStripSeparator As ToolStripSeparator
-    Friend WithEvents Label1 As Label
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents ClientesDataGridView As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents preview As ToolStripButton
-    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents Label1 As Label
 End Class

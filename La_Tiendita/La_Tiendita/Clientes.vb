@@ -12,9 +12,6 @@
     Dim maxPagesWide As Integer
     Dim maxPagesTall As Integer
 
-    Private Sub SplitContainer1_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer1.Panel2.Paint
-
-    End Sub
 
     Private Sub VolverToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VolverToolStripMenuItem.Click
         Me.Close()
@@ -65,11 +62,11 @@
 
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
         ClientesTableAdapter.Fill(LatienditaDataSet.clientes)
     End Sub
 
-    Private Sub GuardarToolStripButton_Click(sender As Object, e As EventArgs) Handles GuardarToolStripButton.Click
+    Private Sub GuardarToolStripButton_Click(sender As Object, e As EventArgs)
         Try
             Me.Validate()
             Me.ClientesBindingSource.EndEdit()
@@ -81,21 +78,21 @@
 
     End Sub
 
-    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs)
         For Each row As DataGridViewRow In ClientesDataGridView.SelectedRows
             ClientesDataGridView.Rows.Remove(row)
         Next
 
     End Sub
 
-    Private Sub preview_Click(sender As Object, e As EventArgs) Handles preview.Click
+    Private Sub preview_Click(sender As Object, e As EventArgs)
         Dim ppd As New PrintPreviewDialog
         ppd.Document = PrintDocument1
         ppd.WindowState = FormWindowState.Maximized
         ppd.ShowDialog()
     End Sub
 
-    Private Sub ImprimirToolStripButton_Click(sender As Object, e As EventArgs) Handles ImprimirToolStripButton.Click
+    Private Sub ImprimirToolStripButton_Click(sender As Object, e As EventArgs)
         PrintDocument1.Print()
     End Sub
 
@@ -239,4 +236,7 @@
 
     End Sub
 
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        busca_cliente.Show()
+    End Sub
 End Class

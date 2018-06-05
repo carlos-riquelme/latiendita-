@@ -20,10 +20,6 @@
         Me.Close()
     End Sub
 
-    Private Sub btn_agregar_Click(sender As Object, e As EventArgs)
-        nv_producto.Show()
-    End Sub
-
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'LatienditaDataSet.productos' Puede moverla o quitarla según sea necesario.
         Me.ProductosTableAdapter.Fill(Me.LatienditaDataSet.productos)
@@ -218,5 +214,9 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         busca_prod.Show()
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
     End Sub
 End Class
